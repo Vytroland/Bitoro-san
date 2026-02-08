@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapa Boleslavska</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="map-wrapper">
+        <svg id="mapa-boleslav" viewBox="0 0 800 900" xmlns="http://www.w3.org/2000/svg">
+            <path d="M..." class="okres-hranice" stroke="red" fill="none" /> 
+            <g id="mnichovo-hradiste" class="map-point" data-id="mnichovo">
+                <circle class="outer-ring" cx="420" cy="150" r="18" fill="#27ae60" />
+                <circle class="inner-dot" cx="420" cy="150" r="6" fill="white" />
+            </g>
+        </svg>
+    </div>
+
+    <div id="info-panel" style="display:none; position:fixed; right:0; top:0; width:300px; background:white; height:100%; box-shadow:-2px 0 5px rgba(0,0,0,0.2); padding:20px;">
+        <h2 id="p-title"></h2>
+        <p id="p-desc"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
