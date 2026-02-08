@@ -3,30 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interaktivní mapa Boleslavska</title>
+    <title>Interaktivní mapa Mladoboleslavska</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="map-wrapper">
-        <svg id="mapa-boleslav" viewBox="0 0 800 1100" xmlns="http://www.w3.org/2000/svg">
-            <image href="Mapa.png" x="0" y="0" width="800" height="1100" />
+        <svg id="mapa-boleslav" viewBox="0 0 1000 1200" xmlns="http://www.w3.org/2000/svg">
+            <image href="Mapa.png" x="0" y="0" width="1000" height="1200" />
 
-            <g id="mnichovo-hradiste" class="map-point" data-id="mnichovo">
-                <circle class="outer-ring" cx="420" cy="150" r="18" fill="#27ae60" />
-                <circle class="inner-dot" cx="420" cy="150" r="6" fill="white" />
+            <g class="map-point" data-id="mnichovo">
+                <circle class="outer-ring" cx="560" cy="150" r="16" fill="#27ae60" />
+                <circle class="inner-dot" cx="560" cy="150" r="6" fill="white" />
+            </g>
+            <g class="map-point" data-id="drabske">
+                <circle class="outer-ring" cx="680" cy="140" r="16" fill="#27ae60" />
+                <circle class="inner-dot" cx="680" cy="140" r="6" fill="white" />
             </g>
 
-            </svg>
+            <g class="map-point" data-id="bela-zamek">
+                <circle class="outer-ring" cx="300" cy="300" r="16" fill="#27ae60" />
+                <circle class="inner-dot" cx="300" cy="300" r="6" fill="white" />
+            </g>
+            <g class="map-point" data-id="vrchbela">
+                <circle class="outer-ring" cx="240" cy="260" r="16" fill="#27ae60" />
+                <circle class="inner-dot" cx="240" cy="260" r="6" fill="white" />
+            </g>
+
+            <g class="map-point" data-id="muzeum">
+                <circle class="outer-ring" cx="530" cy="480" r="16" fill="#27ae60" />
+                <circle class="inner-dot" cx="530" cy="480" r="6" fill="white" />
+            </g>
+            <g class="map-point" data-id="michalovice">
+                <circle class="outer-ring" cx="490" cy="510" r="16" fill="#27ae60" />
+                <circle class="inner-dot" cx="490" cy="510" r="6" fill="white" />
+            </g>
+
+            <g class="map-point" data-id="loucen">
+                <circle class="outer-ring" cx="740" cy="670" r="16" fill="#27ae60" />
+                <circle class="inner-dot" cx="740" cy="670" r="6" fill="white" />
+            </g>
+            <g class="map-point" data-id="mcb">
+                <circle class="outer-ring" cx="640" cy="590" r="16" fill="#27ae60" />
+                <circle class="inner-dot" cx="640" cy="590" r="6" fill="white" />
+            </g>
+
+            <g class="map-point" data-id="benatky-zamek">
+                <circle class="outer-ring" cx="440" cy="790" r="16" fill="#27ae60" />
+                <circle class="inner-dot" cx="440" cy="790" r="6" fill="white" />
+            </g>
+            <g class="map-point" data-id="milovice-rezervace">
+                <circle class="outer-ring" cx="510" cy="950" r="16" fill="#27ae60" />
+                <circle class="inner-dot" cx="510" cy="950" r="6" fill="white" />
+            </g>
+        </svg>
     </div>
 
     <div id="info-panel">
         <div class="panel-content">
-            <h2 id="p-title">Vyberte místo na mapě</h2>
-            <div id="p-badge" class="badge"></div>
+            <h2 id="p-title">Vyberte místo</h2>
+            <div id="p-badge" class="badge">Region</div>
             <img id="p-img" src="" alt="" style="width:100%; display:none; border-radius:8px; margin:15px 0;">
-            <p id="p-desc">Kliknutím na bod na mapě zobrazíte podrobnosti o daném místě.</p>
-            <ul id="p-features"></ul>
+            <p id="p-desc">Klikněte na bod na mapě.</p>
             <button onclick="document.getElementById('info-panel').style.display='none'">Zavřít</button>
         </div>
     </div>
