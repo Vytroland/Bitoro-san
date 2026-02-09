@@ -3,82 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interaktivní mapa Mladoboleslavska</title>
+    <title>Průvodce Mladoboleslavskem</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header class="top-header">
-        <div class="panel title-panel">
+        <div class="panel blue-bubble">
             <h1>Průvodce Mladoboleslavskem</h1>
         </div>
-        <div class="panel desc-panel">
+        <div class="panel light-blue-bubble">
             <p>Objevte nejkrásnější místa našeho regionu. Klikněte na body na mapě!</p>
         </div>
     </header>
 
-    <div class="main-content">
-        <div class="map-container">
-            <div class="map-wrapper">
-                <svg id="mapa-boleslav" viewBox="0 0 1000 1100" xmlns="http://www.w3.org/2000/svg">
-                    <image href="Mapa.png" x="0" y="0" width="1000" height="1100" />
-
-                    <g class="map-point" data-id="mnichovo">
-                        <circle class="outer-ring" cx="560" cy="150" r="25" fill="#27ae60" />
-                        <circle class="inner-dot" cx="560" cy="150" r="8" fill="white" />
-                    </g>
-                    <g class="map-point" data-id="drabske">
-                        <circle class="outer-ring" cx="680" cy="140" r="25" fill="#27ae60" />
-                        <circle class="inner-dot" cx="680" cy="140" r="8" fill="white" />
-                    </g>
-                    <g class="map-point" data-id="bela-zamek">
-                        <circle class="outer-ring" cx="300" cy="300" r="25" fill="#27ae60" />
-                        <circle class="inner-dot" cx="300" cy="300" r="8" fill="white" />
-                    </g>
-                    <g class="map-point" data-id="vrchbela">
-                        <circle class="outer-ring" cx="240" cy="260" r="25" fill="#27ae60" />
-                        <circle class="inner-dot" cx="240" cy="260" r="8" fill="white" />
-                    </g>
-                    <g class="map-point" data-id="muzeum">
-                        <circle class="outer-ring" cx="530" cy="480" r="25" fill="#27ae60" />
-                        <circle class="inner-dot" cx="530" cy="480" r="8" fill="white" />
-                    </g>
-                    <g class="map-point" data-id="michalovice">
-                        <circle class="outer-ring" cx="490" cy="510" r="25" fill="#27ae60" />
-                        <circle class="inner-dot" cx="490" cy="510" r="8" fill="white" />
-                    </g>
-                    <g class="map-point" data-id="loucen">
-                        <circle class="outer-ring" cx="740" cy="670" r="25" fill="#27ae60" />
-                        <circle class="inner-dot" cx="740" cy="670" r="8" fill="white" />
-                    </g>
-                    <g class="map-point" data-id="mcb">
-                        <circle class="outer-ring" cx="640" cy="590" r="25" fill="#27ae60" />
-                        <circle class="inner-dot" cx="640" cy="590" r="8" fill="white" />
-                    </g>
-                    <g class="map-point" data-id="benatky-zamek">
-                        <circle class="outer-ring" cx="440" cy="790" r="25" fill="#27ae60" />
-                        <circle class="inner-dot" cx="440" cy="790" r="8" fill="white" />
-                    </g>
-                    <g class="map-point" data-id="milovice-rezervace">
-                        <circle class="outer-ring" cx="510" cy="950" r="25" fill="#27ae60" />
-                        <circle class="inner-dot" cx="510" cy="950" r="8" fill="white" />
-                    </g>
-                </svg>
-            </div>
+    <main class="main-content">
+        <div class="white-box map-container">
+            <svg id="mapa-boleslav" viewBox="0 0 1000 1100" xmlns="http://www.w3.org/2000/svg">
+                <image href="Mapa.png" x="0" y="0" width="1000" height="1100" />
+                
+                <g class="map-point" data-id="mnichovo"><circle class="outer-ring" cx="560" cy="150" r="25" fill="#27ae60"/><circle class="inner-dot" cx="560" cy="150" r="8" fill="white"/></g>
+                <g class="map-point" data-id="drabske"><circle class="outer-ring" cx="680" cy="140" r="25" fill="#27ae60"/><circle class="inner-dot" cx="680" cy="140" r="8" fill="white"/></g>
+                <g class="map-point" data-id="bela-zamek"><circle class="outer-ring" cx="300" cy="300" r="25" fill="#27ae60"/><circle class="inner-dot" cx="300" cy="300" r="8" fill="white"/></g>
+                <g class="map-point" data-id="vrchbela"><circle class="outer-ring" cx="240" cy="260" r="25" fill="#27ae60"/><circle class="inner-dot" cx="240" cy="260" r="8" fill="white"/></g>
+                <g class="map-point" data-id="muzeum"><circle class="outer-ring" cx="530" cy="480" r="25" fill="#27ae60"/><circle class="inner-dot" cx="530" cy="480" r="8" fill="white"/></g>
+                <g class="map-point" data-id="michalovice"><circle class="outer-ring" cx="490" cy="510" r="25" fill="#27ae60"/><circle class="inner-dot" cx="490" cy="510" r="8" fill="white"/></g>
+                <g class="map-point" data-id="loucen"><circle class="outer-ring" cx="740" cy="670" r="25" fill="#27ae60"/><circle class="inner-dot" cx="740" cy="670" r="8" fill="white"/></g>
+                <g class="map-point" data-id="mcb"><circle class="outer-ring" cx="640" cy="590" r="25" fill="#27ae60"/><circle class="inner-dot" cx="640" cy="590" r="8" fill="white"/></g>
+                <g class="map-point" data-id="benatky-zamek"><circle class="outer-ring" cx="440" cy="790" r="25" fill="#27ae60"/><circle class="inner-dot" cx="440" cy="790" r="8" fill="white"/></g>
+                <g class="map-point" data-id="milovice-rezervace"><circle class="outer-ring" cx="510" cy="950" r="25" fill="#27ae60"/><circle class="inner-dot" cx="510" cy="950" r="8" fill="white"/></g>
+            </svg>
         </div>
 
-        <div id="info-panel">
-            <div class="panel-content">
-                <div class="panel-header">
-                    <h2 id="p-title">Vyberte místo</h2>
-                    <div id="p-badge" class="badge">Kategorie</div>
-                </div>
-                <img id="p-img" src="" alt="" style="width:100%; display:none; border-radius:12px; margin:15px 0;">
-                <p id="p-desc">Zde se zobrazí informace o vybraném místě.</p>
-                <button onclick="document.getElementById('info-panel').style.display='none'">Zavřít</button>
+        <aside id="info-panel" class="white-box">
+            <div class="panel-header">
+                <h2 id="p-title">Vyberte místo</h2>
+                <span id="p-badge" class="category-badge">Kategorie</span>
             </div>
-        </div>
-    </div>
+            <img id="p-img" src="" alt="" style="display:none;">
+            <p id="p-desc">Kliknutím na bod na mapě zobrazíte podrobnosti o dané lokalitě.</p>
+            <button class="close-btn" onclick="document.getElementById('info-panel').style.display='none'">Zavřít</button>
+        </aside>
+    </main>
 
     <script src="script.js"></script>
 </body>
