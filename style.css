@@ -1,122 +1,113 @@
+/* Celkové pozadí webu (Tmavě modrá z obrázku 2) */
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #2c3e50; /* Tmavě modré pozadí z obrázku 2 */
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #2c3e50; 
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
 }
 
-/* Horní lišta */
+/* Horní lišta - Modré bubliny */
 .top-header {
     display: flex;
-    gap: 20px;
-    padding: 30px;
-    width: 90%;
-    max-width: 1100px;
+    gap: 15px;
+    padding: 25px;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
 .panel {
-    background-color: #3498db; /* Modrá bublina */
     color: white; /* Bílý text pro čitelnost */
-    padding: 15px 30px;
-    border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    padding: 12px 25px;
+    border-radius: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-.panel h1, .panel p {
-    margin: 0;
-    font-weight: 600;
-}
+.blue-bubble { background-color: #2980b9; }
+.light-blue-bubble { background-color: #3498db; }
 
-/* Hlavní sekce s mapou a panelem */
+.panel h1 { margin: 0; font-size: 1.4rem; }
+.panel p { margin: 0; font-size: 1rem; }
+
+/* Hlavní obsah - Mapa a Panel */
 .main-content {
     display: flex;
+    gap: 30px;
     width: 95%;
-    max-width: 1400px;
+    max-width: 1300px;
+    padding: 20px;
     justify-content: center;
     align-items: flex-start;
-    gap: 30px;
-    padding-bottom: 50px;
 }
 
-/* Bílá kostka pod mapou */
-.map-container {
+/* Styl pro bílé "kostky" */
+.white-box {
     background-color: white;
-    padding: 30px;
     border-radius: 25px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-    flex: 1;
-    max-width: 900px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-svg {
-    width: 100%;
-    height: auto;
+.map-container {
+    flex: 2;
+    max-width: 850px;
 }
 
-.map-point { cursor: pointer; }
-.map-point:hover .outer-ring { fill: #2ecc71; transition: 0.3s; }
-
-/* Info Panel - Bílá kostka */
 #info-panel {
-    width: 350px;
-    background: white;
-    border-radius: 25px;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.5);
-    display: none; /* Skryté do kliknutí */
+    flex: 1;
+    max-width: 350px;
+    display: none; /* Schová se, dokud se neklikne */
 }
 
-.panel-content { padding: 30px; }
+/* SVG a body */
+svg { width: 100%; height: auto; display: block; }
+.map-point { cursor: pointer; transition: transform 0.2s; }
+.map-point:hover { transform: scale(1.1); }
 
-/* Záhlaví panelu s titulkem a kategorií na straně */
+/* Vnitřek info panelu */
 .panel-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     margin-bottom: 15px;
 }
 
-#p-title {
-    margin: 0;
-    color: #2c3e50;
-    font-size: 1.4rem;
-    flex: 1;
-}
+h2 { margin: 0; color: #2c3e50; font-size: 1.3rem; }
 
-.badge {
-    background: #e67e22; /* Oranžová kategorie */
+.category-badge {
+    background-color: #e67e22; /* Oranžová pro kategorie */
     color: white;
-    padding: 5px 12px;
-    border-radius: 12px;
+    padding: 4px 10px;
+    border-radius: 10px;
     font-size: 0.75rem;
-    margin-left: 10px;
-    white-space: nowrap;
-}
-
-#p-desc {
-    color: #5d6d7e;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-button {
-    width: 100%;
-    background: #2c3e50;
-    color: white;
-    border: none;
-    padding: 15px;
-    border-radius: 15px;
-    cursor: pointer;
     font-weight: bold;
 }
 
-/* Responsivita */
-@media (max-width: 1100px) {
+#p-img {
+    width: 100%;
+    border-radius: 15px;
+    margin: 15px 0;
+}
+
+#p-desc { color: #5d6d7e; line-height: 1.5; }
+
+.close-btn {
+    width: 100%;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Mobilní verze */
+@media (max-width: 900px) {
     .main-content { flex-direction: column; align-items: center; }
-    #info-panel { width: 90%; }
-    .top-header { flex-direction: column; }
+    #info-panel { width: 100%; max-width: 850px; box-sizing: border-box; }
 }
