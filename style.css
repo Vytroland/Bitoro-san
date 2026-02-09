@@ -1,139 +1,122 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f7f6; /* Světle šedé pozadí webu */
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #2c3e50; /* Tmavě modré pozadí z obrázku 2 */
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
 }
 
-/* Horní sekce s panely */
+/* Horní lišta */
 .top-header {
     display: flex;
     gap: 20px;
-    padding: 20px;
+    padding: 30px;
     width: 90%;
-    max-width: 1000px;
+    max-width: 1100px;
     justify-content: center;
 }
 
 .panel {
-    background-color: #2980b9; /* Modrá barva */
-    color: white;
+    background-color: #3498db; /* Modrá bublina */
+    color: white; /* Bílý text pro čitelnost */
     padding: 15px 30px;
-    border-radius: 50px; /* Hodně oblé rohy */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    text-align: center;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
-.title-panel h1 {
+.panel h1, .panel p {
     margin: 0;
-    font-size: 1.5rem;
+    font-weight: 600;
 }
 
-.desc-panel {
-    background-color: #3498db; /* Trochu světlejší modrá */
+/* Hlavní sekce s mapou a panelem */
+.main-content {
     display: flex;
-    align-items: center;
-}
-
-.desc-panel p {
-    margin: 0;
-    font-size: 1rem;
-}
-
-/* Mapa a její pozadí */
-.map-container {
-    background-color: white; /* Bílé pozadí přímo za mapou */
-    width: 90%;
-    max-width: 1000px;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-
-.map-wrapper {
-    width: 100%;
-    display: flex;
+    width: 95%;
+    max-width: 1400px;
     justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    padding-bottom: 50px;
+}
+
+/* Bílá kostka pod mapou */
+.map-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    flex: 1;
+    max-width: 900px;
 }
 
 svg {
     width: 100%;
     height: auto;
-    max-height: 70vh;
 }
 
-/* Větší body na mapě */
-.map-point {
-    cursor: pointer;
-    transition: opacity 0.2s;
-}
+.map-point { cursor: pointer; }
+.map-point:hover .outer-ring { fill: #2ecc71; transition: 0.3s; }
 
-.map-point:hover {
-    opacity: 0.8;
-}
-
-.map-point:hover .outer-ring {
-    fill: #2ecc71;
-}
-
-/* Info Panel na pravé straně */
+/* Info Panel - Bílá kostka */
 #info-panel {
-    position: fixed;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-    width: 300px;
+    width: 350px;
     background: white;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-    display: none;
-    z-index: 1000;
+    border-radius: 25px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+    display: none; /* Skryté do kliknutí */
 }
 
-.panel-content {
-    padding: 25px;
+.panel-content { padding: 30px; }
+
+/* Záhlaví panelu s titulkem a kategorií na straně */
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+#p-title {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.4rem;
+    flex: 1;
 }
 
 .badge {
-    display: inline-block;
-    background: #e67e22;
+    background: #e67e22; /* Oranžová kategorie */
     color: white;
     padding: 5px 12px;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    margin-bottom: 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    margin-left: 10px;
+    white-space: nowrap;
 }
 
-h2 { margin: 0 0 10px 0; color: #2c3e50; }
-p { color: #5d6d7e; line-height: 1.6; }
+#p-desc {
+    color: #5d6d7e;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
 
 button {
     width: 100%;
     background: #2c3e50;
     color: white;
     border: none;
-    padding: 12px;
-    border-radius: 10px;
+    padding: 15px;
+    border-radius: 15px;
     cursor: pointer;
-    margin-top: 15px;
     font-weight: bold;
 }
 
-button:hover { background: #1a252f; }
-
-/* Mobilní zobrazení */
-@media (max-width: 800px) {
-    .top-header { flex-direction: column; align-items: stretch; }
-    #info-panel {
-        width: 90%;
-        top: auto;
-        bottom: 20px;
-        right: 5%;
-        transform: none;
-    }
+/* Responsivita */
+@media (max-width: 1100px) {
+    .main-content { flex-direction: column; align-items: center; }
+    #info-panel { width: 90%; }
+    .top-header { flex-direction: column; }
 }
