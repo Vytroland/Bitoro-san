@@ -1,4 +1,4 @@
-/* Celkové pozadí webu */
+/* Celkové pozadí webu - tmavě modrá */
 body {
     margin: 0;
     padding: 0;
@@ -10,41 +10,43 @@ body {
     min-height: 100vh;
 }
 
-/* Horní sekce - Sjednocené a vycentrované bubliny */
+/* Horní sekce - bubliny vycentrované nad mapou */
 .top-header {
     display: flex;
     gap: 20px;
     padding: 30px 20px;
     width: 100%;
-    max-width: 900px; /* Stejná šířka jako kontejner s mapou pro zarovnání */
-    justify-content: center; /* Vycentrování bublin na střed */
+    max-width: 900px; 
+    justify-content: center;
     flex-wrap: wrap;
 }
 
+/* Sjednocený vzhled pro obě horní bubliny */
 .panel {
-    background-color: #2980b9; /* Sjednocená tmavší modrá barva */
+    background-color: #2980b9; 
     color: white;
     padding: 15px 30px;
-    border-radius: 50px; /* Sjednocené kulaté okraje */
+    border-radius: 50px; 
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 50px; /* Zajištění stejné výšky */
     text-align: center;
+    flex: 1; /* Aby měly podobnou šířku */
+    min-width: 250px;
 }
 
 .panel h1 { 
     margin: 0; 
-    font-size: 1.3rem; 
+    font-size: 1.2rem; 
 }
 
 .panel p { 
     margin: 0; 
-    font-size: 1rem; 
+    font-size: 0.95rem; 
 }
 
-/* Hlavní obsah - Mapa a Panel */
+/* Hlavní obsahový blok */
 .main-content {
     display: flex;
     gap: 30px;
@@ -55,7 +57,7 @@ body {
     align-items: flex-start;
 }
 
-/* Bílé kostky */
+/* Bílé kostky (pro mapu i info panel) */
 .white-box {
     background-color: white;
     border-radius: 25px;
@@ -71,22 +73,27 @@ body {
 #info-panel {
     flex: 1;
     max-width: 350px;
-    display: none;
+    display: none; /* Skryto do kliknutí na bod */
 }
 
-/* SVG a interaktivní body */
-svg { width: 100%; height: auto; display: block; }
+/* Nastavení mapy a bodů */
+svg { 
+    width: 100%; 
+    height: auto; 
+    display: block; 
+}
 
 .map-point { 
     cursor: pointer; 
 }
 
+/* Efekt při najetí - jen změna barvy, žádný pohyb */
 .map-point:hover .outer-ring { 
     fill: #2ecc71; 
     transition: fill 0.2s ease; 
 }
 
-/* Vnitřek panelu */
+/* Vnitřní styl informačního panelu */
 .panel-header {
     display: flex;
     justify-content: space-between;
@@ -94,7 +101,11 @@ svg { width: 100%; height: auto; display: block; }
     margin-bottom: 15px;
 }
 
-h2 { margin: 0; color: #2c3e50; font-size: 1.3rem; }
+h2 { 
+    margin: 0; 
+    color: #2c3e50; 
+    font-size: 1.3rem; 
+}
 
 .category-badge {
     background-color: #e67e22;
@@ -111,7 +122,10 @@ h2 { margin: 0; color: #2c3e50; font-size: 1.3rem; }
     margin: 15px 0;
 }
 
-#p-desc { color: #5d6d7e; line-height: 1.6; }
+#p-desc { 
+    color: #5d6d7e; 
+    line-height: 1.6; 
+}
 
 .close-btn {
     width: 100%;
@@ -125,9 +139,18 @@ h2 { margin: 0; color: #2c3e50; font-size: 1.3rem; }
     margin-top: 15px;
 }
 
-/* Responzivita pro mobily */
+/* Responzivní zobrazení pro mobily */
 @media (max-width: 950px) {
-    .main-content { flex-direction: column; align-items: center; }
-    #info-panel { width: 100%; max-width: 850px; box-sizing: border-box; }
-    .top-header { max-width: 100%; }
+    .main-content { 
+        flex-direction: column; 
+        align-items: center; 
+    }
+    #info-panel { 
+        width: 100%; 
+        max-width: 850px; 
+        box-sizing: border-box; 
+    }
+    .top-header { 
+        max-width: 100%; 
+    }
 }
