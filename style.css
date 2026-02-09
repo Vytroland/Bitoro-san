@@ -1,81 +1,139 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    background-color: #1a252f;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6; /* Světle šedé pozadí webu */
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
+}
+
+/* Horní sekce s panely */
+.top-header {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    width: 90%;
+    max-width: 1000px;
+    justify-content: center;
+}
+
+.panel {
+    background-color: #2980b9; /* Modrá barva */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px; /* Hodně oblé rohy */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.title-panel h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.desc-panel {
+    background-color: #3498db; /* Trochu světlejší modrá */
+    display: flex;
+    align-items: center;
+}
+
+.desc-panel p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Mapa a její pozadí */
+.map-container {
+    background-color: white; /* Bílé pozadí přímo za mapou */
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 .map-wrapper {
-    width: 90%;
-    height: 90%;
+    width: 100%;
     display: flex;
     justify-content: center;
 }
 
 svg {
     width: 100%;
-    height: 100%;
+    height: auto;
+    max-height: 70vh;
 }
 
+/* Větší body na mapě */
 .map-point {
     cursor: pointer;
+    transition: opacity 0.2s;
 }
 
-/* Jemné zesvětlení bodu při najetí - ŽÁDNÉ HÝBÁNÍ */
+.map-point:hover {
+    opacity: 0.8;
+}
+
 .map-point:hover .outer-ring {
     fill: #2ecc71;
-    transition: 0.3s;
 }
 
-/* INFO PANEL */
+/* Info Panel na pravé straně */
 #info-panel {
     position: fixed;
-    top: 20px;
+    top: 50%;
     right: 20px;
-    width: 320px;
+    transform: translateY(-50%);
+    width: 300px;
     background: white;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
     display: none;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .panel-content {
-    padding: 20px;
+    padding: 25px;
 }
 
 .badge {
     display: inline-block;
-    background: #3498db;
+    background: #e67e22;
     color: white;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 12px;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
     margin-bottom: 10px;
 }
 
-h2 {
-    margin: 0 0 10px 0;
-    color: #2c3e50;
-}
-
-p {
-    color: #7f8c8d;
-    line-height: 1.5;
-}
+h2 { margin: 0 0 10px 0; color: #2c3e50; }
+p { color: #5d6d7e; line-height: 1.6; }
 
 button {
     width: 100%;
-    background: #e74c3c;
+    background: #2c3e50;
     color: white;
     border: none;
-    padding: 10px;
-    border-radius: 6px;
+    padding: 12px;
+    border-radius: 10px;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+button:hover { background: #1a252f; }
+
+/* Mobilní zobrazení */
+@media (max-width: 800px) {
+    .top-header { flex-direction: column; align-items: stretch; }
+    #info-panel {
+        width: 90%;
+        top: auto;
+        bottom: 20px;
+        right: 5%;
+        transform: none;
+    }
 }
