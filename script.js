@@ -1,86 +1,81 @@
 const locations = {
     "mnichovo": { 
         title: "Zámek Mnichovo Hradiště", 
-        badge: "Baroko & Historie", 
-        desc: "Prohlédněte si velkolepé sídlo Valdštejnů. Najdete zde unikátní knihovnu s 22 tisíci svazky, o kterou se staral sám slavný Giacomo Casanova, a vzácné zámecké divadlo.", 
+        badge: "Baroko", 
+        desc: "Navštivte velkolepé sídlo Valdštejnů. Najdete zde knihovnu, kterou spravoval Giacomo Casanova, a vzácné zámecké divadlo.", 
         img: "img/mnichovo.jpg" 
     },
     "drabske": { 
         title: "Drábské světničky", 
-        badge: "Skály & Výhledy", 
-        desc: "Bývalá skalní pevnost, která nabízí jeden z nejlepších výhledů v celém kraji. Procházet se budete po dřevěných mostech a schodištích vysoko na pískovcových blocích.", 
+        badge: "Skály", 
+        desc: "Skalní pevnost s nejkrásnějším výhledem v kraji. Projděte se po mostech vysoko nad zemí v pískovcových skalách.", 
         img: "img/drabske.jpg" 
     },
     "bela-zamek": { 
         title: "Zámek Bělá pod Bezdězem", 
-        badge: "Památka & Lesy", 
-        desc: "Klidné šlechtické sídlo na okraji hlubokých lesů. Dozvíte se zde o historii papírenství v regionu a prohlédnete si expozici věnovanou řemeslům.", 
+        badge: "Historie", 
+        desc: "Původně gotická tvrz přestavěná na zámek. Obklopují ho hluboké lesy a klidná atmosféra historického města.", 
         img: "img/bela.jpg" 
     },
     "vrchbela": { 
-        title: "Areál Vrchbělá", 
-        badge: "Sport & Rodina", 
-        desc: "Ideální místo pro aktivní odpočinek. Najdete tu in-line dráhu, rozhlednu ve tvaru jehlanu a mini zoo, kde si děti mohou zblízka prohlédnout zvířata.", 
+        title: "Sportovní areál Vrchbělá", 
+        badge: "Pro rodiny", 
+        desc: "Ideální pro sport i relax. Najdete tu in-line dráhu, rozhlednu, zoo koutek pro děti a lanové centrum.", 
         img: "img/vrchbela.jpg" 
     },
     "muzeum": { 
         title: "Škoda Muzeum", 
-        badge: "Auto & Technika", 
-        desc: "Fascinující cesta historií automobilky. Od prvních kol Laurin & Klement přes luxusní limuzíny až po moderní koncepty, které určují budoucnost dopravy.", 
+        badge: "Technika", 
+        desc: "Srdce Mladé Boleslavi. Poznejte historii aut od prvních kol Laurin & Klement až po moderní vozy budoucnosti.", 
         img: "img/muzeum.jpg" 
     },
     "michalovice": { 
         title: "Zřícenina Michalovice", 
-        badge: "Tajemství & Výhled", 
-        desc: "Hrad proslulý svou věží 'Putna', která je kvůli poddolování viditelně nakloněná – dokonce více než věž v Pise! Nabízí krásný výhled na údolí Jizery.", 
+        badge: "Zřícenina", 
+        desc: "Hrad proslulý šikmou věží zvanou 'Putna'. Věž se naklání více než ta v Pise a je odtud krásný výhled na Jizeru.", 
         img: "img/michalovice.jpg" 
     },
     "loucen": { 
         title: "Zámek Loučeň", 
-        badge: "Zábava & Labyrinty", 
-        desc: "Místo, kde se nikdo nenudí. V zámeckém parku na vás čeká 12 unikátních labyrintů a bludišť, včetně světelného, provazového nebo kamenného.", 
+        badge: "Zábava", 
+        desc: "Zámek s unikátním labyrintáriem. V parku najdete 12 různých bludišť a labyrintů, které zabaví děti i dospělé.", 
         img: "img/loucen.jpg" 
     },
     "mcb": { 
         title: "Muzeum čtveráků", 
-        badge: "Humor & Recese", 
-        desc: "Netradiční muzeum v obci Březno. Je věnované vtipům, místním čtverákům a humoru, který je pro tento kraj typický. Ideální pro dobrou náladu!", 
+        badge: "Recese", 
+        desc: "Jedinečné muzeum v Březně věnované humoru, místním tradicím a lidem, co si umí udělat legraci sami ze sebe.", 
         img: "img/mcb.jpg" 
     },
     "benatky-zamek": { 
         title: "Zámek Benátky nad Jizerou", 
-        badge: "Hračky & Hvězdy", 
-        desc: "Na tomto zámku působil slavný hvězdář Tycho Brahe. Dnes zde kromě historických interiérů najdete i úžasné muzeum historických hraček.", 
+        badge: "Věda", 
+        desc: "Působiště astronoma Tychona Brahe. Dnes tu najdete muzeum historických hraček a krásné renesanční nádvoří.", 
         img: "img/benatky.jpg" 
     },
     "milovice-rezervace": { 
         title: "Rezervace divokých koní", 
-        badge: "Příroda & Zvířata", 
-        desc: "Kousek opravdové divočiny. Na rozlehlých pastvinách bývalého vojenského prostoru můžete pozorovat divoké koně, pratury a majestátní zubry.", 
+        badge: "Příroda", 
+        desc: "Pozorujte divoké koně, pratury a zubry v jejich přirozeném prostředí v bývalém vojenském prostoru Milovice.", 
         img: "img/milovice.jpg" 
     }
 };
 
-// Logika pro zobrazení panelu po kliknutí na bod
 document.querySelectorAll('.map-point').forEach(point => {
     point.addEventListener('click', function() {
         const id = this.getAttribute('data-id');
         const data = locations[id];
-        
         if (data) {
             document.getElementById('p-title').innerText = data.title;
             document.getElementById('p-badge').innerText = data.badge;
             document.getElementById('p-desc').innerText = data.desc;
-            
             const imgElement = document.getElementById('p-img');
             if (data.img) {
                 imgElement.src = data.img;
                 imgElement.style.display = 'block';
-                imgElement.alt = data.title;
             } else {
                 imgElement.style.display = 'none';
             }
-            
             document.getElementById('info-panel').style.display = 'block';
         }
     });
