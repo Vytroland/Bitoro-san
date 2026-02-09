@@ -10,35 +10,47 @@ body {
     min-height: 100vh;
 }
 
-/* Horní lišta - Modré bubliny */
+/* Horní sekce - Sjednocené a vycentrované bubliny */
 .top-header {
     display: flex;
-    gap: 15px;
-    padding: 25px;
+    gap: 20px;
+    padding: 30px 20px;
+    width: 100%;
+    max-width: 900px; /* Stejná šířka jako kontejner s mapou pro zarovnání */
+    justify-content: center; /* Vycentrování bublin na střed */
     flex-wrap: wrap;
-    justify-content: center;
 }
 
 .panel {
+    background-color: #2980b9; /* Sjednocená tmavší modrá barva */
     color: white;
-    padding: 12px 25px;
-    border-radius: 40px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    padding: 15px 30px;
+    border-radius: 50px; /* Sjednocené kulaté okraje */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px; /* Zajištění stejné výšky */
+    text-align: center;
 }
 
-.blue-bubble { background-color: #2980b9; }
-.light-blue-bubble { background-color: #3498db; }
+.panel h1 { 
+    margin: 0; 
+    font-size: 1.3rem; 
+}
 
-.panel h1 { margin: 0; font-size: 1.4rem; }
-.panel p { margin: 0; font-size: 1rem; }
+.panel p { 
+    margin: 0; 
+    font-size: 1rem; 
+}
 
-/* Hlavní obsah */
+/* Hlavní obsah - Mapa a Panel */
 .main-content {
     display: flex;
     gap: 30px;
     width: 95%;
     max-width: 1300px;
-    padding: 20px;
+    padding: 10px 20px 50px 20px;
     justify-content: center;
     align-items: flex-start;
 }
@@ -62,14 +74,13 @@ body {
     display: none;
 }
 
-/* SVG a BODY - OPRAVENO: Žádný pohyb */
+/* SVG a interaktivní body */
 svg { width: 100%; height: auto; display: block; }
 
 .map-point { 
     cursor: pointer; 
 }
 
-/* Při najetí se změní jen barva, bod se NEHÝBE */
 .map-point:hover .outer-ring { 
     fill: #2ecc71; 
     transition: fill 0.2s ease; 
@@ -88,9 +99,9 @@ h2 { margin: 0; color: #2c3e50; font-size: 1.3rem; }
 .category-badge {
     background-color: #e67e22;
     color: white;
-    padding: 4px 10px;
-    border-radius: 10px;
-    font-size: 0.75rem;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.8rem;
     font-weight: bold;
 }
 
@@ -100,7 +111,7 @@ h2 { margin: 0; color: #2c3e50; font-size: 1.3rem; }
     margin: 15px 0;
 }
 
-#p-desc { color: #5d6d7e; line-height: 1.5; }
+#p-desc { color: #5d6d7e; line-height: 1.6; }
 
 .close-btn {
     width: 100%;
@@ -111,10 +122,12 @@ h2 { margin: 0; color: #2c3e50; font-size: 1.3rem; }
     border-radius: 12px;
     cursor: pointer;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
-@media (max-width: 900px) {
+/* Responzivita pro mobily */
+@media (max-width: 950px) {
     .main-content { flex-direction: column; align-items: center; }
     #info-panel { width: 100%; max-width: 850px; box-sizing: border-box; }
+    .top-header { max-width: 100%; }
 }
