@@ -1,4 +1,4 @@
-/* Celkové pozadí webu (Tmavě modrá z obrázku 2) */
+/* Celkové pozadí webu */
 body {
     margin: 0;
     padding: 0;
@@ -20,7 +20,7 @@ body {
 }
 
 .panel {
-    color: white; /* Bílý text pro čitelnost */
+    color: white;
     padding: 12px 25px;
     border-radius: 40px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -32,7 +32,7 @@ body {
 .panel h1 { margin: 0; font-size: 1.4rem; }
 .panel p { margin: 0; font-size: 1rem; }
 
-/* Hlavní obsah - Mapa a Panel */
+/* Hlavní obsah */
 .main-content {
     display: flex;
     gap: 30px;
@@ -43,7 +43,7 @@ body {
     align-items: flex-start;
 }
 
-/* Styl pro bílé "kostky" */
+/* Bílé kostky */
 .white-box {
     background-color: white;
     border-radius: 25px;
@@ -59,15 +59,23 @@ body {
 #info-panel {
     flex: 1;
     max-width: 350px;
-    display: none; /* Schová se, dokud se neklikne */
+    display: none;
 }
 
-/* SVG a body */
+/* SVG a BODY - OPRAVENO: Žádný pohyb */
 svg { width: 100%; height: auto; display: block; }
-.map-point { cursor: pointer; transition: transform 0.2s; }
-.map-point:hover { transform: scale(1.1); }
 
-/* Vnitřek info panelu */
+.map-point { 
+    cursor: pointer; 
+}
+
+/* Při najetí se změní jen barva, bod se NEHÝBE */
+.map-point:hover .outer-ring { 
+    fill: #2ecc71; 
+    transition: fill 0.2s ease; 
+}
+
+/* Vnitřek panelu */
 .panel-header {
     display: flex;
     justify-content: space-between;
@@ -78,7 +86,7 @@ svg { width: 100%; height: auto; display: block; }
 h2 { margin: 0; color: #2c3e50; font-size: 1.3rem; }
 
 .category-badge {
-    background-color: #e67e22; /* Oranžová pro kategorie */
+    background-color: #e67e22;
     color: white;
     padding: 4px 10px;
     border-radius: 10px;
@@ -106,7 +114,6 @@ h2 { margin: 0; color: #2c3e50; font-size: 1.3rem; }
     margin-top: 10px;
 }
 
-/* Mobilní verze */
 @media (max-width: 900px) {
     .main-content { flex-direction: column; align-items: center; }
     #info-panel { width: 100%; max-width: 850px; box-sizing: border-box; }
