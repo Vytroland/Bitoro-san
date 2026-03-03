@@ -8,41 +8,22 @@
 </head>
 <body>
 
-    <header class="top-header">
-        <div class="panel">
-            <h1>Průvodce Mladoboleslavskem</h1>
-        </div>
-        <div class="panel">
-            <p>Objevte nejkrásnější místa našeho regionu. Klikněte na body na mapě!</p>
-        </div>
-    </header>
+    <div class="map-wrapper">
+        <img src="Mapa.png" alt="Mapa" class="map-image">
+        
+        <div class="dot" style="top: 15%; left: 56%;" data-id="mnichovo" data-name="Mnichovo Hradiště"></div>
+        <div class="dot" style="top: 28%; left: 30%;" data-id="bela" data-name="Bělá p. Bezdězem"></div>
+        <div class="dot" style="top: 45%; left: 53%;" data-id="boleslav" data-name="Mladá Boleslav"></div>
+        <div class="dot" style="top: 48%; left: 49%;" data-id="michalovice" data-name="Michalovice"></div>
+        <div class="dot" style="top: 63%; left: 74%;" data-id="loucen" data-name="Zámek Loučeň"></div>
+        <div class="dot" style="top: 74%; left: 44%;" data-id="benatky" data-name="Benátky n. Jizerou"></div>
+    </div>
 
-    <div class="main-content">
-        <div class="white-box map-container">
-            <svg id="mapa-boleslav" viewBox="0 0 1000 1100" xmlns="http://www.w3.org/2000/svg">
-                <image href="Mapa.png" x="0" y="0" width="1000" height="1100" />
-                
-                <g class="map-point" data-id="mnichovo"><circle class="outer-ring" cx="560" cy="150" r="25" fill="#27ae60"/><circle class="inner-dot" cx="560" cy="150" r="8" fill="white"/></g>
-                <g class="map-point" data-id="drabske"><circle class="outer-ring" cx="680" cy="140" r="25" fill="#27ae60"/><circle class="inner-dot" cx="680" cy="140" r="8" fill="white"/></g>
-                <g class="map-point" data-id="bela-zamek"><circle class="outer-ring" cx="300" cy="300" r="25" fill="#27ae60"/><circle class="inner-dot" cx="300" cy="300" r="8" fill="white"/></g>
-                <g class="map-point" data-id="vrchbela"><circle class="outer-ring" cx="240" cy="260" r="25" fill="#27ae60"/><circle class="inner-dot" cx="240" cy="260" r="8" fill="white"/></g>
-                <g class="map-point" data-id="muzeum"><circle class="outer-ring" cx="530" cy="480" r="25" fill="#27ae60"/><circle class="inner-dot" cx="530" cy="480" r="8" fill="white"/></g>
-                <g class="map-point" data-id="michalovice"><circle class="outer-ring" cx="490" cy="510" r="25" fill="#27ae60"/><circle class="inner-dot" cx="490" cy="510" r="8" fill="white"/></g>
-                <g class="map-point" data-id="loucen"><circle class="outer-ring" cx="740" cy="670" r="25" fill="#27ae60"/><circle class="inner-dot" cx="740" cy="670" r="8" fill="white"/></g>
-                <g class="map-point" data-id="mcb"><circle class="outer-ring" cx="640" cy="590" r="25" fill="#27ae60"/><circle class="inner-dot" cx="640" cy="590" r="8" fill="white"/></g>
-                <g class="map-point" data-id="benatky-zamek"><circle class="outer-ring" cx="440" cy="790" r="25" fill="#27ae60"/><circle class="inner-dot" cx="440" cy="790" r="8" fill="white"/></g>
-                <g class="map-point" data-id="milovice-rezervace"><circle class="outer-ring" cx="510" cy="950" r="25" fill="#27ae60"/><circle class="inner-dot" cx="510" cy="950" r="8" fill="white"/></g>
-            </svg>
-        </div>
-
-        <div id="info-panel" class="white-box">
-            <div class="panel-header">
-                <h2 id="p-title">Vyberte místo</h2>
-                <span id="p-badge" class="category-badge">Kategorie</span>
-            </div>
-            <img id="p-img" src="" alt="Foto místa" style="display:none;">
-            <p id="p-desc">Kliknutím na bod na mapě zobrazíte podrobnosti o lokalitě.</p>
-            <button class="close-btn" onclick="document.getElementById('info-panel').style.display='none'">Zavřít</button>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2 id="m-title"></h2>
+            <img id="m-img" src="">
+            <button class="close-btn" id="closeBtn">ZAVŘÍT</button>
         </div>
     </div>
 
